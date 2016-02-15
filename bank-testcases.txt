@@ -1,6 +1,6 @@
 
  Bank Test Cases
- ======================================
+ ===============
 
  When trying to connect to server: Trying to connect...
  Listening for connections on server: Listening on port 32722...
@@ -77,3 +77,4 @@
 
  If server shuts down while clients are connected:
  [All Clients] Output: [Disconnected] Server has shutdown!
+ 
