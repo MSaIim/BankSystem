@@ -1,7 +1,7 @@
 
  Bank Test Plan
- ======================================
-
+ ==============
+ 
  Type "make" (without quotes) before doing anything.
  You can type "make clean" to remove ".o" files.
 
