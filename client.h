@@ -22,8 +22,8 @@ struct clsock
 {
 	int sock;
 	char *message,
-		 *command,
-		 *arg;
+	     *command,
+	     *arg;
 	char *server_reply;
 
 	// Input and message threads
