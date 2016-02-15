@@ -1,0 +1,79 @@
+
+ Bank Test Cases
+ ======================================
+
+ When trying to connect to server: Trying to connect...
+ Listening for connections on server: Listening on port 32722...
+
+ Startup:
+ --------
+ [Client] Input: ./client localhost 32722
+ [Server] Output: [Connected] 127.0.0.1:<client_port>
+ [Client] Output: Connected to localhost on port 32722!
+
+ Connected:
+ ----------
+ [Client1] Input: 	open Mike Jones
+ [Client1] Output: 	[Success] Account created.
+ [Client1] Input: 	start Mike Jones
+ [Client1] Output:	Welcome! Options: [credit, debit, balance, finish]
+ [Client1] Input:	open Lydia
+ [Client1] Output:	[Error] Invalid input!
+ [Client2] Input:	start Mike Jones
+ [Client2] Output:	[Error] Cannot login. Try again or wait...
+ [Client1] Input:	credit 1200.50
+ [Client1] Output:	[Success] Amount added to account.
+ [Client1] Input:	debit 200
+ [Client1] Output:	[Success] Amount withdrawn from account.
+ [Client1] Input:	credit -50.00
+ [Client1] Output:	[Error] Amount must be greater than zero.
+ [Client1] Input:	debit 2000
+ [Client1] Output:	[Error] Amount must not exceed current balance.
+ [Client1] Input:	balance
+ [Client1] Output:	1000.50
+ [Client1] Input:	finish
+ [Client1] Output:	Goodbye! Options: [open, start, exit]
+ [Client2] Input:	start Mike Jones
+ [Client2] Output:	Welcome! Options: [credit, debit, balance, finish]
+ [Client1] Input:	exit
+ [Client1] Output:	Disconnected from server.
+ [Server]  Output:	[Disconnected] 127.0.0.1:<client1_port>
+ [Client2] Input:	credit 20
+ [Client2] Output:	[Success] Amount added to account.
+ [Client2] Input:	balance
+ [Client2] Output:	1020.50
+ [Client2] Input:	finish
+ [Client2] Output:	Goodbye! Options: [open, start, exit]
+ [Client2] Input:	open Mike Jones
+ [Client2] Output:	[Error] Duplicate account detected.
+
+ After bank has 20 accounts:
+ [Client] Input:	open Lydia
+ [Client] Output:	[Error] Cannot open account at this time...
+
+
+ Every 20 seconds the server will output account info for all accounts:
+ ------------
+ Server Info
+ ------------
+ Account: mike jones
+ Balance: 1020.50
+ Session: IN SERVICE
+
+ Account: lydia
+ Balance: 105929.50
+ Session: IN SERVICE
+
+ Account: george mckin
+ Balance: 82.12
+ Session: NOT IN SERVICE
+
+ Account: natasha pedro
+ Balance: 293.12
+ Session: IN SERVICE
+
+ // The rest of the accounts here if they exist
+
+
+ If server shuts down while clients are connected:
+ [All Clients] Output: [Disconnected] Server has shutdown!

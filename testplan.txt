@@ -1,0 +1,22 @@
+
+ Bank Test Plan
+ ======================================
+
+ Type "make" (without quotes) before doing anything.
+ You can type "make clean" to remove ".o" files.
+
+ Server:
+ -------
+ Run the server by typing "./server" (no quotes). Server listens on port 32722.
+ Server will wait for incoming connections from clients.
+
+ Client:
+ -------
+ Run the client program by typing "./client localhost 32722" (again, no quotes).
+
+ This will connect you to the server if it is on the same machine.
+ Change "localhost" to address of your choice if server is on a different machine.
+
+ Test Cases:
+ -----------
+ You can now run the test cases outlined in "bank-testcases.txt".
