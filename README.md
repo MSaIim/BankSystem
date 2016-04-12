@@ -13,6 +13,6 @@ A simple bank server and client system written in C. Uses multithreading to allo
     Server: ./server (Will start and wait for incoming connections)
     Client: ./client <ip address> <port>
     
-    Note: Client simulates multiple accounts by sleeping. You may remove the `throttle()` methods to speed it up.
+Note: Client simulates multiple accounts by sleeping. You may remove the `throttle()` methods to speed it up.
     
 Follow instructions in the client to continue using program. Server will print out account information every 20 seconds.
