@@ -1,2 +1,16 @@
-# BankSystem
-A simple bank server and client system. Written in C
+# ![](http://i.imgur.com/3pluBLY.png) BankSystem
+A simple bank server and client system written in C. Uses multithreading to allow simultaneous connections.
+
++ Up to 20 accounts can be made
++ Uses `mutex` locks to prevent multiple access to same account
++ Client may connect to any server and port via command line arguments.
++ Server is always on port `32722` (Can be changed in `server.c`)
+
+## ![](http://i.imgur.com/haDJTsX.png) Usage
+
+    Compile: Type 'make' in terminal | 'make clean' to remove objects files
+    
+    Server: ./server (Will start and wait for incoming connections)
+    Client: ./client <ip address> <port>
+    
+From there just follow the instructions in the client. Server will print out account information every 20 seconds.
